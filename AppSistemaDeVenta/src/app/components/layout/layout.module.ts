@@ -12,6 +12,7 @@ import { SharedModule } from '../../reutilizable/shared/shared.module';
 import { ModalUsuarioComponent } from './modals/modal-usuario/modal-usuario.component';
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -25,7 +26,8 @@ import { ModalUsuarioComponent } from './modals/modal-usuario/modal-usuario.comp
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    SharedModule
+    SharedModule,
+    
   ]
 })
 export class LayoutModule { }

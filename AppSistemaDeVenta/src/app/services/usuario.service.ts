@@ -13,27 +13,27 @@ import { Usuario } from '../interfaces/usuario';
 export class UsuarioService {
 
   private http = inject(HttpClient);
-  private url = environment.endppoint + 'Usuario/';
+  private url = environment.endppoint + 'Usuario';
 
   constructor() { }
 
   iniciarSesion(request: Login): Observable<ResponseApi>{
-    return this.http.post<ResponseApi>(`${this.url}IniciarSesion`, request);
+    return this.http.post<ResponseApi>(`${this.url}/IniciarSesion`, request);
   }
 
   lista():Observable<ResponseApi>{
-    return this.http.get<ResponseApi>(`${this.url}Lista`);
+    return this.http.get<ResponseApi>(`${this.url}/Lista`);
   }
 
   guardar(request: Usuario): Observable<ResponseApi>{
-    return this.http.post<ResponseApi>(`${this.url}Guardar`, request);
+    return this.http.post<ResponseApi>(`${this.url}/Guardar`, request);
   }
 
   editar(request: Usuario): Observable<ResponseApi>{
-    return this.http.put<ResponseApi>(`${this.url}Editar`, request);
+    return this.http.put<ResponseApi>(`${this.url}/Editar`, request);
   }
 
   eliminar(id:number): Observable<ResponseApi>{
-    return this.http.delete<ResponseApi>(`${this.url}Eliminar/${id}`);
+    return this.http.delete<ResponseApi>(`${this.url}/Eliminar/${id}`);
   }
 }
