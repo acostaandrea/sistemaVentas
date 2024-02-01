@@ -10,6 +10,7 @@ import { HistorialVentaComponent } from './pages/historial-venta/historial-venta
 import { ReporteComponent } from './pages/reporte/reporte.component';
 import { SharedModule } from '../../reutilizable/shared/shared.module';
 import { ModalUsuarioComponent } from './modals/modal-usuario/modal-usuario.component';
+import { ModalProductoComponent } from './modals/modal-producto/modal-producto.component';
 
 
 
@@ -21,7 +22,8 @@ import { ModalUsuarioComponent } from './modals/modal-usuario/modal-usuario.comp
     VentaComponent,
     HistorialVentaComponent,
     ReporteComponent,
-    ModalUsuarioComponent
+    ModalUsuarioComponent,
+    ModalProductoComponent
   ],
   imports: [
     CommonModule,
