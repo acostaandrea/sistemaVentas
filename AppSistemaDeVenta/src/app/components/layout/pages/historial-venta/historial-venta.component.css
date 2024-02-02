@@ -1,0 +1,18 @@
+.campos-formulario {
+ display: flex;
+ justify-content: space-between;
+}
+
+.boton-buscar {
+ width: 10rem;
+ margin-top: 0.5rem;
+ height: 2.5rem;
+}
+
+mat-form-field {
+ margin-right: 1rem;
+}
+.input-filter{
+  font-size: 1rem;
+  width: 100%;
+}

@@ -21,7 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 import { LayoutModule } from '@angular/cdk/layout';

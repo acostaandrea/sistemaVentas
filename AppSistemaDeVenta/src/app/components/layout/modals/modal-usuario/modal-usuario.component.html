@@ -5,27 +5,17 @@
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Nombre Completo</mat-label>
-          <input
-            matInput
-            formControlName="nombreCompleto"
-            required
-            autocomplete="off"
-          />
+          <input matInput formControlName="nombreCompleto" required autocomplete="off" />
           <mat-icon matSuffix>account-box</mat-icon>
           @if (formulario.get('nombreCompleto')?.hasError('required') && formulario.get('nombreCompleto')?.touched) {
-            <mat-error>Campo requerido</mat-error>
+          <mat-error>Campo requerido</mat-error>
           }
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Correo</mat-label>
-          <input
-            matInput
-            formControlName="correo"
-            required
-            autocomplete="off"
-          />
+          <input matInput formControlName="correo" required autocomplete="off" />
           <mat-icon matSuffix>mail</mat-icon>
         </mat-form-field>
       </mat-grid-tile>
@@ -35,28 +25,18 @@
           <mat-select formControlName="idRol" required>
             <mat-option *ngFor="let item of listaRoles" [value]="item.idRol">{{
               item.nombre
-            }}</mat-option>
+              }}</mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Contraseña</mat-label>
-          <input
-            matInput
-            [type]="ocultarPassword ? 'password' : 'text'"
-            formControlName="clave"
-            required
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="ocultarPassword = !ocultarPassword"
-            type="button"
-          >
+          <input matInput [type]="ocultarPassword ? 'password' : 'text'" formControlName="clave" required />
+          <button mat-icon-button matSuffix (click)="ocultarPassword = !ocultarPassword" type="button">
             <mat-icon matSuffix>{{
               ocultarPassword ? "visibility_off" : "visibility"
-            }}</mat-icon>
+              }}</mat-icon>
           </button>
         </mat-form-field>
       </mat-grid-tile>
@@ -74,6 +54,7 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-raised-button mat-dialog-close color="warn">Volver</button>
-  <button mat-raised-button color="primary" [disabled]="formulario.invalid" (click)="guardarEditar_Usuario()">{{botonAccion}}</button>
+  <button mat-raised-button color="primary" [disabled]="formulario.invalid"
+    (click)="guardarEditar_Usuario()">{{botonAccion}}</button>
 
 </mat-dialog-actions>
