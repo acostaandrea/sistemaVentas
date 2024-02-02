@@ -16,7 +16,7 @@ export class VentaService {
   constructor() { }
 
   registrar(request: Venta): Observable<ResponseApi>{
-    return this.http.post<ResponseApi>(`${this.url}Regristrar`, request);
+    return this.http.post<ResponseApi>(`${this.url}Registrar`, request);
   }
 
   historial(buscarPor: string, numeroVenta:string, fechaInicio: string, fechaFin: string): Observable<ResponseApi>{

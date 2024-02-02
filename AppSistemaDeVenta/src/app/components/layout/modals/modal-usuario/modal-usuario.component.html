@@ -12,6 +12,9 @@
             autocomplete="off"
           />
           <mat-icon matSuffix>account-box</mat-icon>
+          @if (formulario.get('nombreCompleto')?.hasError('required') && formulario.get('nombreCompleto')?.touched) {
+            <mat-error>Campo requerido</mat-error>
+          }
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile>
