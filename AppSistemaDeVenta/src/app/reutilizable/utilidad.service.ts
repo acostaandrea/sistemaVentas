@@ -30,4 +30,6 @@ export class UtilidadService {
   eliminarSesionUsuario() {
     localStorage.removeItem('usuario');
   }
+
+  //TODO: Implementar guard para proteger rutas
 }
