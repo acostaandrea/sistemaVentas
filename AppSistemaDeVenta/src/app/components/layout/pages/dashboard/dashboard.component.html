@@ -1,1 +1,48 @@
-<p>dashboard works!</p>
+<h1 style="margin: 20px 0px 0px 40px;">Dashboard - Resumen última semana</h1>
+<mat-card style="margin: 1rem 2rem 2rem 2rem">
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="7rem">
+      <mat-grid-tile>
+        <mat-card style="width: 85%;">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="accent">payment</mat-icon>
+            </div>
+            <mat-card-title>Total Ingresos</mat-card-title>
+            <mat-card-subtitle>$ {{totalIngresos}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card style="width: 85%;">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="warn">sell</mat-icon>
+            </div>
+            <mat-card-title>Total de Ventas</mat-card-title>
+            <mat-card-subtitle>$ {{totalVentas}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card style="width: 85%;">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="primary">collections_bookmark</mat-icon>
+            </div>
+            <mat-card-title>Total Productos</mat-card-title>
+            <mat-card-subtitle>{{totalProductos}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card style="margin-top: 2rem;">
+      <mat-card-content>
+        <div style="width: 100%; height: 26rem;">
+        <canvas id="chartBarras"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
+
