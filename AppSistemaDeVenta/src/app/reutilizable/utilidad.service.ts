@@ -31,5 +31,10 @@ export class UtilidadService {
     localStorage.removeItem('usuario');
   }
 
+  obtenerRolUsuario(): string | null {
+    const usuario = this.obtenerSesionUsuario();
+    return usuario ? usuario.rol : null;
+  }
+
   //TODO: Implementar guard para proteger rutas
 }

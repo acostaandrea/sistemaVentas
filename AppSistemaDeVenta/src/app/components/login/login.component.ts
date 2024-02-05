@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Login } from '../../interfaces/login';
 import { UsuarioService } from '../../services/usuario.service';
 import { UtilidadService } from '../../reutilizable/utilidad.service';
+import { MenuService } from '../../services/menu.service';
+import { Menu } from '../../interfaces/menu';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +17,13 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
   private usuarioService = inject(UsuarioService);
   private utilidadService = inject(UtilidadService);
+  private _menuService = inject(MenuService);
   private router = inject(Router);
 
   formularioLogin: FormGroup;
   ocultarPassword: boolean = true;
   mostrarLoading : boolean = false;
+  listaMenu: Menu[] = [];
 
   constructor() {
     this.formularioLogin = this.fb.group({
@@ -39,7 +43,7 @@ export class LoginComponent {
         next: (data) => {
           if (data.status) {
             this.utilidadService.guardarSesionUsuario(data.value);
-            this.router.navigate(['/pages/dashboard']);
+            this.obtenerMenu(data.value.idUsuario);
           } else{
             this.utilidadService.mostrarAlerta('No se encontraron coincidencias', 'ERROR');
           }
@@ -52,6 +56,22 @@ export class LoginComponent {
         }
       }
     );
+  }
+
+  obtenerMenu(idUsuario: number) {
+    this._menuService.lista(idUsuario).subscribe({
+      next: (data) => {
+        if(data.status){
+          this.listaMenu = data.value;          
+          if(this.listaMenu.length > 0) {
+            this.router.navigate([this.listaMenu[0].url]);
+          }
+        }
+      },
+      error: (error) => {
+        console.error('Error al obtener el menú', error);
+      }
+    });
   }
 
 }

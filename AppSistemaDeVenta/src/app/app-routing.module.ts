@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { roleGuard } from './guards/role-guard.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'pages',
+    canActivate: [roleGuard],
     loadChildren: () => import('./components/layout/layout.module').then(m => m.LayoutModule)
   },
   {
